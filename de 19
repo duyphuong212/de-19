@@ -1,0 +1,21 @@
+# de-19
+#include <stdio.h>
+
+float maxArr(float arr[], int n) {
+    if (n == 1) {
+        return arr[0];
+    }
+    float max = maxArr(arr, n-1);
+    if (arr[n-1] > max) {
+        return arr[n-1];
+    }
+    return max;
+}
+
+int main() {
+    float arr[] = {1.5, 3.7, 5.2, 4.8, 2.1, 6.9};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    float max = maxArr(arr, n);
+    printf("Gia tri lon nhat trong mang la %.2f", max);
+    return 0;
+}
